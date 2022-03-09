@@ -14,7 +14,7 @@ app.use(fileUpload());
 const { getAuth } = require("firebase-admin/auth");
 const admin = require("firebase-admin");
 
-const serviceAccount = require("./secure/doctorsportaldb-firebase-adminsdk-24i0i-8ebac99b75.json");
+const serviceAccount = require(process.env.adminSdk);
 
 admin.initializeApp({
 	credential: admin.credential.cert(serviceAccount),
